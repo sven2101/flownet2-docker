@@ -151,13 +151,7 @@ fun__debug_printf "Output:          ${OUTPUT}";
 
 
 ## The command depends on the version of nvidia-docker
-dummy=`which nvidia-docker`;
-if test $? -eq 0; then
-  DOCKER_CMD='nvidia-docker run';
-else
-  DOCKER_CMD='docker run --runtime=nvidia';
-fi
-
+DOCKER_CMD='docker run --runtime=nvidia';
 
 ## Run docker container
 #  - "--device" lines map a specified host GPU into the contained
