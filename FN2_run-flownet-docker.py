@@ -7,6 +7,7 @@ import argparse
 from scipy import misc
 import caffe
 import tempfile
+import flowiz as fz
 from math import ceil
 
 
@@ -42,13 +43,16 @@ def readFlow(name):
     return flow.astype(np.float32)
 
 def writeFlow(name, flow):
-    f = open(name, 'wb')
-    f.write('PIEH'.encode('utf-8'))
-    np.array([flow.shape[1], flow.shape[0]], dtype=np.int32).tofile(f)
     flow = flow.astype(np.float32)
-    flow.tofile(f)
-    f.flush()
-    f.close() 
+    uv = fz.convert_from_flow(flow, mode='UV')
+    np.save(name,uv)
+    #f = open(name, 'wb')
+    #f.write('PIEH'.encode('utf-8'))
+    #np.array([flow.shape[1], flow.shape[0]], dtype=np.int32).tofile(f)
+    #flow = flow.astype(np.float32)
+    #flow.tofile(f)
+    #f.flush()
+    #f.close() 
 
 parser = argparse.ArgumentParser()
 parser.add_argument('caffemodel', help='path to model')
