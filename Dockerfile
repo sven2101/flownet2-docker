@@ -44,6 +44,7 @@ RUN apt-get update &&                          \
         python-scipy                           \
         python-protobuf                        \
         python-pillow                          \
+        python-flowiz                          \
         python-skimage                      && \
     chown ${USER}:${GROUP} /flownet2
 
