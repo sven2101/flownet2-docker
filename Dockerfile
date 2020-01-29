@@ -28,6 +28,7 @@ RUN apt-get update &&                          \
         ca-certificates                        \
         wget                                   \
         git                                    \
+        ffmpeg                                 \
         libatlas-base-dev                      \
         libboost-all-dev                       \
         libgflags-dev                          \
