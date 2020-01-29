@@ -45,9 +45,14 @@ RUN apt-get update &&                          \
         python-scipy                           \
         python-protobuf                        \
         python-pillow                          \
-        python-flowiz                          \
+        python-pip                             \
+        python-setuptools                      \
         python-skimage                      && \
     chown ${USER}:${GROUP} /flownet2
+
+USER ${USER}
+RUN pip install --upgrade pip && \
+    pip install flowiz
 
 USER ${USER}
 RUN git clone https://github.com/lmb-freiburg/flownet2                      && \
