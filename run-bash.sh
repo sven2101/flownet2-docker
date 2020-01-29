@@ -9,12 +9,7 @@ set -e
 ## Treat unset variables as error
 set -u
 
-dummy=`which nvidia-docker`;
-if test $? -eq 0; then
-  DOCKER_CMD='nvidia-docker run';
-else
-  DOCKER_CMD='docker run --runtime=nvidia';
-fi
+DOCKER_CMD='docker run --runtime=nvidia';
 
 ${DOCKER_CMD} \
   --rm \
