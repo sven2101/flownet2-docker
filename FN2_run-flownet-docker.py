@@ -43,7 +43,6 @@ def readFlow(name):
     return flow.astype(np.float32)
 
 def writeFlow(name, flow):
-    flow = flow.astype(np.float32)
     uv = fz.convert_from_flow(flow, mode='UV')
     np.save(name,uv)
     #f = open(name, 'wb')
