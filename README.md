@@ -1,3 +1,9 @@
+# Forked FlowNet 2.0 Docker Image
+
+* remove old not working nvida-docker command
+* add flowiz to docker image to only save u and v
+* save as .npy 
+
 # FlowNet 2.0 Docker Image
 
 [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](LICENSE)
