@@ -1,8 +1,9 @@
 # Forked FlowNet 2.0 Docker Image
 
 * remove old not working nvida-docker command
-* add flowiz to docker image to only save u and v
+* add flowiz to docker image to save only u and v
 * save as .npy 
+* minor changes
 
 # FlowNet 2.0 Docker Image
 
